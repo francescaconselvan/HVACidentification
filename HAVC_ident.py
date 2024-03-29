@@ -7,6 +7,7 @@ Created on Wed May 31 20:00:20 2023
 """HVAC identifiaction from time series of elctricity consummptions using different ML techniques """
 
 #%%
+import openpyxl
 import pandas,h5py,numpy,copy
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -32,7 +33,9 @@ class H5ls:
             self.names += [name]
 #%% time series from heat pump consumptions from the German dataset as part of exploratory data analysis EDA
 # reference: https://doi.org/10.1038/s41597-022-01156-1
-fileName="HP_powerTimeseries/2018_data_15min.hdf5"
+
+file_timeseries= r"/Users/francesca/Desktop/e-think/MODERATE/HP_powerTimeseries/2018_data_15min.hdf5"
+45=file_timeseries
 file = h5py.File(fileName, 'r')
 visitor = H5ls()
 file.visititems(visitor)
@@ -116,7 +119,8 @@ plt.show()
 ###### ###### ###### ###### ###### ######
 ###### ###### ###### ###### ###### ######
 #fileName="c:\\Users\\SHARIFIM\\OneDrive - VITO\\Moderate\\3_Working documents\\WP4 - Data enhancement\\HVAC_spatial_allocation\\Datasets\\HP_powerTimeseries/2018_data_15min.hdf5"
-fileName="HP_powerTimeseries/2018_data_15min.hdf5"
+file_timeseries= r"/Users/francesca/Desktop/e-think/MODERATE/HP_powerTimeseries/2018_data_15min.hdf5"
+fileName=file_timeseries
 file = h5py.File(fileName, 'r')
 visitor = H5ls()
 file.visititems(visitor)
@@ -125,7 +129,7 @@ Load_time_series=pandas.DataFrame()
 for i in range(len(dset_names)):
     Load_time_series['2018_'+dset_names[i]]=pandas.read_hdf(fileName,dset_names[i]).drop(columns="index").P_TOT
 #fileName="c:\\Users\\SHARIFIM\\OneDrive - VITO\\Moderate\\3_Working documents\\WP4 - Data enhancement\\HVAC_spatial_allocation\\Datasets\\HP_powerTimeseries/2019_data_15min.hdf5"
-fileName="HP_powerTimeseries/2018_data_15min.hdf5"
+fileName=file_timeseries
 file = h5py.File(fileName, 'r')
 visitor = H5ls()
 file.visititems(visitor)
