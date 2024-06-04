@@ -34,8 +34,10 @@ class H5ls:
 #%% time series from heat pump consumptions from the German dataset as part of exploratory data analysis EDA
 # reference: https://doi.org/10.1038/s41597-022-01156-1
 
-file_timeseries= r"/Users/francesca/Desktop/e-think/MODERATE/HP_powerTimeseries/2018_data_15min.hdf5"
-45=file_timeseries
+file_dir = r"C:\Users\FrancescaConselvan\Documents\MODERATE GAN\2018_data_15min.hdf5"
+
+file_timeseries= file_dir
+fileName=file_timeseries
 file = h5py.File(fileName, 'r')
 visitor = H5ls()
 file.visititems(visitor)
@@ -119,8 +121,7 @@ plt.show()
 ###### ###### ###### ###### ###### ######
 ###### ###### ###### ###### ###### ######
 #fileName="c:\\Users\\SHARIFIM\\OneDrive - VITO\\Moderate\\3_Working documents\\WP4 - Data enhancement\\HVAC_spatial_allocation\\Datasets\\HP_powerTimeseries/2018_data_15min.hdf5"
-file_timeseries= r"/Users/francesca/Desktop/e-think/MODERATE/HP_powerTimeseries/2018_data_15min.hdf5"
-fileName=file_timeseries
+file_timeseries= file_dir
 file = h5py.File(fileName, 'r')
 visitor = H5ls()
 file.visititems(visitor)

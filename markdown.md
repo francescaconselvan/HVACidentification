@@ -12,7 +12,9 @@ https://github.com/potterheadgryffin/HVACidentification
 * better to list the packages in a requirements.txt file 
 * pickle and numpy packages are not necessary to install  because it is embedded in python
 * scikit-learn version ==1.4.1. version 1.2 failed to install, BUT IT IS A PROBLEM later on to import the pickle model see below - possible to install a free old scikit-learn version? see here: https://stackoverflow.com/questions/59974146/installing-an-old-version-of-scikit-learn
-* install also h5py,openpyxl
+
+SOLUTION: use python version 10 and install scikit-learn 1.2.2
+* install also h5py,tables, openpyxl for running HVAC_indent_model
 
 ## model_reader.py
 - line 3 importing HVAC_ident model:  
